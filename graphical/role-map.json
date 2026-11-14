@@ -108,6 +108,22 @@
         "path": "src/styles.css",
         "selector": ":root"
       }
+    },
+    {
+      "variable": "--action",
+      "token": "primary",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--on-action",
+      "token": "primary.foreground",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
     }
   ],
   "fixed": [

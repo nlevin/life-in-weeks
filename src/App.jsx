@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { useLife } from "./store.js";
 import { parseD, sample, todayMs, parse, answer } from "./model.js";
 import { scrollerOf } from "./drag.js";
@@ -8,10 +8,13 @@ import Tell from "./views/Tell.jsx";
 import EditorRoot from "../graphical/editor-root.jsx";
 
 const VIEWS = {
-  paint: { n: 1, label: "Paint", title: "The grid is the editor", text: "Pick a color, drag it across your weeks, and watch the totals change. Drag the bar under the grid to set your life expectancy.", C: Paint },
-  tracks: { n: 2, label: "Tracks", title: "Your life as parallel tracks", text: "Scroll to travel through time; the header reads out every track at that age. Drag a seam to move a boundary. Tap a chapter to rename or split it.", C: Tracks },
-  tell: { n: 3, label: "Tell", title: "One line does everything", text: "Type what happened in plain words and it lands in the right place. Ask a question in the same box. Tap any line of your story to rewrite it.", C: Tell },
+  paint: { n: 1, label: "Paint", C: Paint },
+  tracks: { n: 2, label: "Tracks", C: Tracks },
+  tell: { n: 3, label: "Tell", C: Tell },
 };
+// Development-only tools (palette explorer, Agentation); production builds drop this import.
+const DevTools = import.meta.env.DEV ? lazy(() => import("./dev/DevTools.jsx")) : null;
+
 const fromHash = () => (VIEWS[location.hash.slice(1)] ? location.hash.slice(1) : "paint");
 
 export default function App() {
@@ -59,7 +62,6 @@ export default function App() {
         <button className="ghost" id="undo" disabled={!canUndo} onClick={undo}>Undo</button>
       </header>
       <main>
-        <p className="pitch"><b>{V.title}</b>{V.text}</p>
         <div id="view"><V.C key={view} life={life} /></div>
         <footer>
           <label htmlFor="birth">Birthday</label>
@@ -69,6 +71,7 @@ export default function App() {
         </footer>
       </main>
       <div className="dragtag" id="dragtag" hidden></div>
+      {DevTools && <Suspense fallback={null}><DevTools /></Suspense>}
     </EditorRoot>
   );
 }

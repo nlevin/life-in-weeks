@@ -9,9 +9,11 @@ const inventory = await analyzeAppStyles({
   appName: 'A life in weeks',
   variables: {},
   classify({ family, path, text, property, value }) {
-    // Chapter and lens colors are content: people pick them per category, and
-    // the sample life's palette and the label ink computed for them live in the model.
+    // The model holds the category palette as references to the theme's color slots
+    // (var(--color-3) … var(--color-10)) and a fallback label ink; nothing here to convert.
     if (path.endsWith('src/model.js')) return { preserve: true };
+    // The dev-only Palettes button copies Graphical's own GUI button (fixed dark chrome, not the app theme).
+    if (path.endsWith('src/dev/palette-explorer.css') && (family === 'color' || family === 'shadow') && /^#|rgba?\(/.test(String(value))) return { preserve: true };
     return {};
   },
 });

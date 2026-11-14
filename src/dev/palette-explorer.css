@@ -1,0 +1,33 @@
+/* Palette explorer: development only. */
+/* The dev tools line up along the bottom-right beside Graphical's GUI button (48px, 16px in):
+   Palettes, then Agentation. With the editor open its button goes away, so they shift right.
+   The palette panel opens above the row, so it never covers a button. */
+.pe-launch{position:fixed;right:72px;bottom:16px;z-index:40;width:48px;height:48px;padding:var(--space-zero);border:0;border-radius:var(--radius-full);display:grid;place-items:center;background:#242424;color:#EEEEEE;box-shadow:0 0 0 1px #383838,0 4px 12px rgba(0,0,0,.16);transition:transform .15s ease-out}
+.pe-launch:hover{transform:scale(1.05)}
+.pe-launch:active{transform:scale(.96)}
+.pe-wheel{width:22px;height:22px;border-radius:var(--radius-full);box-shadow:0 0 0 1.5px #EEEEEE}
+body:not(:has(.gui-expand-button)) .pe-launch{right:16px}
+.dev-agentation{right:128px !important;bottom:18px !important}
+body:not(:has(.gui-expand-button)) .dev-agentation{right:72px !important}
+.pe-panel{position:fixed;right:16px;bottom:72px;z-index:40;width:min(360px,calc(100% - 32px));max-height:min(560px,calc(100% - 88px));display:flex;flex-direction:column;gap:var(--space-m);background:var(--card);color:var(--ink);border:var(--border-s) solid var(--line);border-radius:var(--radius-xl);padding:var(--space-l);box-shadow:0 10px 30px rgba(0,0,0,.18);font-size:var(--size-s);line-height:var(--line-s);letter-spacing:var(--letter-spacing-s)}
+.pe-head{display:flex;align-items:center;justify-content:space-between}
+.pe-head b{font-family:var(--font-display);font-size:var(--size-l);line-height:var(--line-l);font-weight:var(--weight-display-heavy)}
+.pe-x{border:0;background:transparent;color:var(--faint);width:32px;height:32px;font-size:var(--size-xl);border-radius:var(--radius-m)}
+.pe-x:hover{color:var(--ink);background:var(--line)}
+.pe-hint{margin:var(--space-zero);color:var(--muted)}
+.pe-list{overflow-y:auto;min-height:0;display:flex;flex-direction:column;gap:var(--space-xxs);border-radius:var(--radius-m);outline-offset:var(--space-xxs)}
+.pe-opt{display:flex;align-items:center;gap:var(--space-m);padding:var(--space-s) var(--space-m);border-radius:var(--radius-m);cursor:pointer;border:var(--border-s) solid transparent}
+.pe-opt:hover{background:var(--paper)}
+.pe-opt[aria-selected=true]{background:var(--paper);border-color:var(--ink)}
+.pe-name{flex:none;width:96px;font-weight:var(--weight-body-medium);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pe-strip{display:flex;align-items:center;gap:var(--space-xxs);min-width:0}
+.pe-strip i{width:14px;height:14px;border-radius:var(--radius-xs);flex:none}
+.pe-strip .pe-accent{border-radius:var(--radius-full);margin-right:var(--space-xs)}
+.pe-neutrals{display:flex;margin-left:var(--space-xs);border-radius:var(--radius-xs);overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.pe-neutrals i{width:8px;border-radius:var(--radius-zero)}
+.pe-locks{display:flex;align-items:center;gap:var(--space-s);flex-wrap:wrap;color:var(--muted)}
+.pe-locks .chip{min-height:30px;padding:var(--space-xs) var(--space-l)}
+.pe-actions{display:flex;align-items:center;gap:var(--space-m)}
+.pe-actions .grow{flex:1}
+.pe-actions .btn:disabled{opacity:.4;cursor:default}
+.pe-status{margin:var(--space-zero);color:var(--muted)}

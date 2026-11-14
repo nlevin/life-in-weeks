@@ -22,6 +22,9 @@ const roleMap = cssVariablesProfile({
     { variable: '--veil', token: 'neutral-1', derive: { alpha: 0.55 }, defined: css(':root') }, // wash over the future
     { variable: '--font', token: 'font.body', defined: css(':root') },
     { variable: '--display', token: 'font.display', defined: css(':root') },
+    // Added after import: the primary button, so the editor's Primary Btn toggle drives it.
+    { variable: '--action', token: 'primary', defined: css(':root') },
+    { variable: '--on-action', token: 'primary.foreground', defined: css(':root') },
   ],
   // Layout geometry, not theme: the sticky bar height and the measured Tracks header height.
   fixed: ['--barh', '--thead'],

@@ -11,3 +11,7 @@ development-only theme editor is mounted in `src/App.jsx` through `graphical/edi
 Use the theme's variables (`--space-*`, `--size-*`, `--radius-*`, `--neutral-*`, the app aliases such as `--ink` and `--paper`) at use sites; don't hard-code values. Don't edit `graphical/generated/`; change the theme, then run `npx graphical-install --theme graphical`.
 
 Keep the editor development-only: nothing under `src/` may import `@graphical/editor` directly.
+
+Development-only tools live in `src/dev/` and load through `DevTools` in `src/App.jsx`: the palette
+explorer, and Agentation (`agentation`, dev dependency). Agentation feedback pasted into a chat lists
+selectors and notes for elements on the page; apply it with the theme's tokens like any other UI change.

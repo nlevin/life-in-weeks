@@ -26,49 +26,65 @@
     },
     "colors": {
       "light": {
-        "neutral-1": "#F6F2EA",
-        "neutral-2": "#FBF8F2",
-        "neutral-3": "#EDE7DB",
-        "neutral-4": "#E4DCCD",
-        "neutral-5": "#D6CDBC",
-        "neutral-6": "#9C9384",
-        "neutral-7": "#6F675B",
-        "neutral-8": "#4A443B",
-        "neutral-9": "#2F2B24",
-        "neutral-10": "#1E1B16",
+        "neutral-1": "#F2F2F2",
+        "neutral-2": "#F8F8F8",
+        "neutral-3": "#E7E7E7",
+        "neutral-4": "#DDDDDD",
+        "neutral-5": "#CECECE",
+        "neutral-6": "#949494",
+        "neutral-7": "#686868",
+        "neutral-8": "#454545",
+        "neutral-9": "#2B2B2B",
+        "neutral-10": "#1B1B1B",
         "success": "#76ef6b",
         "warning": "#ffa344",
         "error": "#ff5263",
-        "color-1": "#C8553D",
-        "color-2": "#3D6FD9"
+        "color-1": "#D13D91",
+        "color-2": "#3D6FD9",
+        "color-3": "#FA7BA7",
+        "color-4": "#059583",
+        "color-5": "#ECBE24",
+        "color-6": "#6D8AF3",
+        "color-7": "#FF9A6B",
+        "color-8": "#0087AB",
+        "color-9": "#76BA4B",
+        "color-10": "#B06ACE"
       },
       "dark": {
-        "neutral-1": "#14120F",
-        "neutral-2": "#1C1915",
-        "neutral-3": "#25211C",
-        "neutral-4": "#2D2923",
-        "neutral-5": "#3A342C",
-        "neutral-6": "#776F61",
-        "neutral-7": "#A39A88",
-        "neutral-8": "#C3BAA8",
-        "neutral-9": "#DCD4C5",
-        "neutral-10": "#EEE7DA",
+        "neutral-1": "#121212",
+        "neutral-2": "#191919",
+        "neutral-3": "#222222",
+        "neutral-4": "#2A2A2A",
+        "neutral-5": "#353535",
+        "neutral-6": "#707070",
+        "neutral-7": "#9B9B9B",
+        "neutral-8": "#BBBBBB",
+        "neutral-9": "#D5D5D5",
+        "neutral-10": "#E8E8E8",
         "success": "#76ef6b",
         "warning": "#ffa344",
         "error": "#ff5263",
-        "color-1": "#EB7A5E",
-        "color-2": "#7FA2F0"
+        "color-1": "#F467B2",
+        "color-2": "#7FA2F0",
+        "color-3": "#FA7BA7",
+        "color-4": "#059583",
+        "color-5": "#ECBE24",
+        "color-6": "#6D8AF3",
+        "color-7": "#FF9A6B",
+        "color-8": "#0087AB",
+        "color-9": "#76BA4B",
+        "color-10": "#B06ACE"
       }
     },
     "spacing": {
       "zero": 0,
-      "xxs": 1.9125,
-      "xs": 3.825,
-      "s": 5.737500000000001,
-      "m": 7.65,
-      "l": 11.475000000000001,
-      "xl": 15.3,
-      "xxl": 22.950000000000003
+      "xxs": 1.3903244045828862,
+      "xs": 2.7806488091657724,
+      "s": 4.170973213748659,
+      "m": 5.561297618331545,
+      "l": 8.341946427497318,
+      "xl": 11.12259523666309,
+      "xxl": 16.683892854994635
     },
     "letterSpacing": {
       "xs": -0.02,
@@ -79,57 +95,57 @@
     },
     "text": {
       "xxs": {
-        "size": 9,
-        "lineHeight": 12.600000000138698
+        "size": 8.01052305640244,
+        "lineHeight": 11.214732279086864
       },
       "xs": {
-        "size": 11,
-        "lineHeight": 14.66666666692907
+        "size": 9.790639291158536,
+        "lineHeight": 13.05418572177827
       },
       "s": {
-        "size": 13,
-        "lineHeight": 18.571428571428573
+        "size": 11.570755525914633,
+        "lineHeight": 16.529650751306622
       },
       "m": {
-        "size": 15,
-        "lineHeight": 22.5
+        "size": 13.350871760670731,
+        "lineHeight": 20.026307641006095
       },
       "l": {
-        "size": 17.784716687,
-        "lineHeight": 23.712955583
+        "size": 15.829431452533187,
+        "lineHeight": 21.10590860367427
       },
       "xl": {
-        "size": 21.086409843,
-        "lineHeight": 23.42934427
+        "size": 18.768130247122535,
+        "lineHeight": 20.853478052358376
       },
       "xxl": {
-        "size": 24,
-        "lineHeight": 25.999999999999996
+        "size": 21.36139481707317,
+        "lineHeight": 23.141511051829266
       }
     },
     "fonts": {
       "body": {
-        "family": "'Instrument Sans', system-ui, sans-serif",
+        "family": "\"Sidebar Geist\", \"Geist\", sans-serif",
         "weights": {
-          "regular": 400,
-          "medium": 500,
-          "heavy": 600
+          "regular": 300,
+          "medium": 400,
+          "heavy": 500
         }
       },
       "display": {
-        "family": "'Fraunces', Georgia, serif",
+        "family": "\"Timeless Grotesk\", \"Geist\", sans-serif",
         "weights": {
-          "regular": 400,
-          "medium": 600,
-          "heavy": 600
+          "regular": 300,
+          "medium": 500,
+          "heavy": 500
         }
       },
       "data": {
-        "family": "'Instrument Sans', system-ui, sans-serif",
+        "family": "ui-monospace, SFMono-Regular, Menlo, monospace",
         "weights": {
-          "regular": 400,
-          "medium": 500,
-          "heavy": 600
+          "regular": 300,
+          "medium": 400,
+          "heavy": 500
         }
       }
     },
@@ -186,32 +202,32 @@
     "primaryActionColor": "neutral-10",
     "display": {
       "xxs": {
-        "size": 19,
-        "lineHeight": 20.583333333333332
+        "size": 16.911104230182925,
+        "lineHeight": 18.320362916031502
       },
       "xs": {
-        "size": 22.229999999999997,
-        "lineHeight": 24.082499999999996
+        "size": 19.78599194931402,
+        "lineHeight": 21.434824611756856
       },
       "s": {
-        "size": 26.009099999999997,
-        "lineHeight": 28.17652499999999
+        "size": 23.149610580697406,
+        "lineHeight": 25.078744795755515
       },
       "m": {
-        "size": 30.430646999999993,
-        "lineHeight": 32.96653424999999
+        "size": 27.08504437941596,
+        "lineHeight": 29.342131411033954
       },
       "l": {
-        "size": 35.60385698999999,
-        "lineHeight": 38.570845072499985
+        "size": 31.689501923916673,
+        "lineHeight": 34.330293750909725
       },
       "xl": {
-        "size": 41.65651267829998,
-        "lineHeight": 45.12788873482498
+        "size": 37.076717250982504,
+        "lineHeight": 40.16644368856437
       },
       "xxl": {
-        "size": 48.73811983361098,
-        "lineHeight": 52.79962981974523
+        "size": 43.379759183649526,
+        "lineHeight": 46.99473911562032
       }
     },
     "colorTranslucency": {
@@ -341,7 +357,8 @@
           }
         }
       }
-    }
+    },
+    "colorEmphasis": 19.104397681451612
   },
   "componentTokens": {}
 }

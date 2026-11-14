@@ -4,9 +4,10 @@ import {
   paint, parseD, rng, spanAt, spanW, total, totals, uid, wLabel, wMs, yrs,
 } from "../model.js";
 import { asStop, autoScroll } from "../drag.js";
-import { Breakdown, EndHandle } from "../shared.jsx";
+import { Breakdown, EndHandle, ThemeSwatches } from "../shared.jsx";
 
-const cssv = (n) => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+// Read theme variables where the canvas sits: the editor can scope or override them there.
+const cssv = (el, n) => getComputedStyle(el || document.documentElement).getPropertyValue(n).trim();
 
 // 1 · Paint: the weeks grid is the editor.
 export default function Paint({ life }) {
@@ -45,8 +46,15 @@ export default function Paint({ life }) {
     cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); cv.style.height = H + "px";
     const ctx = cv.getContext("2d");
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
-    const inkC = cssv("--ink"), faint = cssv("--faint"), empty = cssv("--empty"), accent = cssv("--accent");
-    ctx.font = `500 9.5px "Instrument Sans",system-ui,sans-serif`; ctx.fillStyle = faint; ctx.textBaseline = "middle"; ctx.textAlign = "right";
+    const inkC = cssv(cv, "--ink"), faint = cssv(cv, "--faint"), empty = cssv(cv, "--empty"), accent = cssv(cv, "--accent");
+    // Canvas can't read var(); resolve each category color once per draw.
+    const resolved = new Map();
+    const paintOf = (c) => {
+      if (!c.color.startsWith("var(")) return c.color;
+      if (!resolved.has(c.color)) resolved.set(c.color, cssv(cv, c.color.slice(4, -1)) || faint);
+      return resolved.get(c.color);
+    };
+    ctx.font = `${cssv(cv, "--weight-body-medium") || 500} 9.5px ${cssv(cv, "--font-body") || "sans-serif"}`; ctx.fillStyle = faint; ctx.textBaseline = "middle"; ctx.textAlign = "right";
     for (let r = 0; r < rows; r += 5) ctx.fillText(r, gut - 5, rowY(r) + cell / 2);
     const arr = new Array(spanW).fill(null);
     if (PL) for (const s of PL.spans) { const c = catOf(PL, s.cat); for (let i = Math.max(0, s.a); i < eb(s); i++) arr[i] = c; }
@@ -58,7 +66,7 @@ export default function Paint({ life }) {
     for (let i = 0; i < spanW; i++) {
       const c = arr[i], past = i <= nowI, hot = dr && i >= dr[0] && i <= dr[1];
       ctx.globalAlpha = hot ? 1 : c ? (past ? 1 : 0.34) : past ? 0.85 : 0.45;
-      ctx.fillStyle = c ? c.color : past ? faint : empty;
+      ctx.fillStyle = c ? paintOf(c) : past ? faint : empty;
       const [x, y] = box(i); rr(x, y, s, rad); ctx.fill();
     }
     ctx.globalAlpha = 1;
@@ -76,7 +84,27 @@ export default function Paint({ life }) {
     const ro = new ResizeObserver(() => drawRef.current());
     ro.observe(gwRef.current);
     if (document.fonts) document.fonts.ready.then(() => drawRef.current());
-    return () => { ro.disconnect(); asStop(); };
+    // Repaint when the theme changes underneath the canvas: Graphical's editor previews
+    // edits by rewriting a <style> element or inline variables, and dark mode can flip.
+    let raf = 0;
+    const redraw = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(() => drawRef.current()); };
+    const mo = new MutationObserver((list) => {
+      if (list.some((m) => !gwRef.current?.contains(m.target))) redraw();
+    });
+    mo.observe(document.documentElement, { subtree: true, childList: true, characterData: true, attributes: true, attributeFilter: ["style", "class", "data-theme"] });
+    // Graphical's editor can also change a variable inside an existing stylesheet rule, which
+    // no observer sees; in development, compare the colors the canvas uses a few times a second.
+    let sig = "";
+    const watch = import.meta.env.DEV ? setInterval(() => {
+      const cv = cvRef.current;
+      if (!cv) return;
+      const next = ["--font-body", "--color-3", "--color-4", "--color-5", "--color-6", "--color-7", "--color-8", "--color-9", "--color-10", "--empty", "--faint", "--accent", "--ink"].map((n) => cssv(cv, n)).join();
+      if (sig && next !== sig) redraw();
+      sig = next;
+    }, 400) : 0;
+    const mq = matchMedia("(prefers-color-scheme: dark)");
+    mq.addEventListener("change", redraw);
+    return () => { clearInterval(watch); ro.disconnect(); mo.disconnect(); mq.removeEventListener("change", redraw); cancelAnimationFrame(raf); asStop(); };
   }, []);
   useEffect(() => { if (P.focusNew) { P.focusNew = false; newRef.current?.focus(); } });
 
@@ -229,10 +257,10 @@ export default function Paint({ life }) {
   else if (bc) ctx = (
     <>
       <div className="row">
-        <input type="color" className="swatch" value={bc.color} aria-label="Color" onChange={(e) => editCat({ color: e.target.value })} />
         <input className="txt grow" value={bc.label} aria-label="Name" onChange={(e) => editCat({ label: e.target.value })} />
         <button className="btn del" onClick={delCat}>Delete</button>
       </div>
+      <ThemeSwatches value={bc.color} onChange={(color) => update((st) => { catOf(activeLens(st), P.brush).color = color; })} />
       <div className="hint">{P.anchor != null ? <>Started at <b>{wLabel(P.anchor)}</b>. Now tap the last week.</> : "Drag across the grid to paint. Or tap the first week, then the last."}</div>
     </>
   );

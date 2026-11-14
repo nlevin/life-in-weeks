@@ -15,6 +15,7 @@
   "devDependencies": {
     "@graphical/editor": "file:graphical/packages/editor-1.0.4.tgz",
     "@vitejs/plugin-react": "^6.3.0",
+    "agentation": "^3.1.2",
     "vite": "^8.3.8"
   }
 }

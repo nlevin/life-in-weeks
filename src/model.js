@@ -1,6 +1,22 @@
 // Shared life model: dates, spans, events, and the plain-language parser.
 const DAY = 864e5, WEEK = 7 * DAY, BIG = 99999;
-const PAL = ["#D9805F","#4F6D8F","#7FA88B","#E2B85C","#9A7CB8","#5FA3B8","#C76B8A","#8C8A5A","#B5654A","#6E8FD1","#4E9A7A","#C9A227"];
+// Category colors are the theme's palette slots 3–10 (1 is the accent, 2 the focus blue),
+// stored as CSS references so editing the theme recolors every chapter, lens and ribbon.
+const PAL = [3, 4, 5, 6, 7, 8, 9, 10].map(n => `var(--color-${n})`);
+// Hex colors saved before categories followed the theme, and the slot each one now uses.
+const LEGACY = {"#D9805F":0,"#4F6D8F":1,"#7FA88B":2,"#E2B85C":3,"#9A7CB8":4,"#5FA3B8":5,"#C76B8A":6,"#8C8A5A":7,"#B5654A":0,"#6E8FD1":1,"#4E9A7A":2,"#C9A227":3};
+const LEGACY_RGB = Object.entries(LEGACY).map(([h, i]) => [parseInt(h.slice(1), 16), i]);
+// Map any saved hex color onto the theme slot it was, or the nearest one.
+function themeColor(c){
+  if(typeof c !== "string" || c.startsWith("var(")) return c;
+  const h = c.toUpperCase();
+  if(h in LEGACY) return PAL[LEGACY[h]];
+  const n = parseInt(h.slice(1), 16); if(Number.isNaN(n)) return PAL[0];
+  const d = m => ((n>>16)-(m>>16))**2 + ((n>>8&255)-(m>>8&255))**2 + ((n&255)-(m&255))**2;
+  return PAL[LEGACY_RGB.reduce((b, x) => d(x[0]) < d(b[0]) ? x : b)[1]];
+}
+// Readable text on a category color: the theme's own on-color for palette slots.
+const onColor = c => /^var\(--color-\d+\)$/.test(c) ? c.replace("--color-", "--on-color-") : ink(c);
 const MONTHS = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"];
 const KEY = "lifeweeks.proto.v2";
 const uid = () => Math.random().toString(36).slice(2, 9);
@@ -33,12 +49,19 @@ function sample(birth = "1990-06-15"){
   const mk = (name, cats, spans) => { const L = {id:uid(), name, cats:cats.map(([l,i]) => c(l,i)), spans:[]}; L.spans = spans.map(([k,a,b]) => ({id:uid(), cat:L.cats[k].id, a:a*52, b:b >= 999 ? BIG : b*52})); return L; };
   const lenses = [
     mk("Chapters", [["Early years",3],["School",2],["College",1],["Career",0],["Retirement",4]], [[0,0,5],[1,5,18],[2,18,22],[3,22,65],[4,65,999]]),
-    mk("Living with", [["Parents",5],["On my own",7],["Partner",6],["Partner and kid",11]], [[0,0,18],[1,18,26],[2,26,33],[3,33,51],[2,51,999]]),
-    mk("Places", [["Hometown",8],["College town",9],["San Francisco",10]], [[0,0,18],[1,18,22],[2,22,999]])
+    mk("Living with", [["Parents",5],["On my own",7],["Partner",6],["Partner and kid",3]], [[0,0,18],[1,18,26],[2,26,33],[3,33,51],[2,51,999]]),
+    mk("Places", [["Hometown",0],["College town",1],["San Francisco",2]], [[0,0,18],[1,18,22],[2,22,999]])
   ];
   return {birth, exp:80, lenses, active:lenses[1].id, events:[{id:uid(), label:"Graduated", w:22*52-2},{id:uid(), label:"Married", w:28*52+10},{id:uid(), label:"Kid born", w:33*52+38}]};
 }
-function load(){ try { const s = JSON.parse(localStorage.getItem(KEY)); return s && Array.isArray(s.lenses) ? s : null; } catch(e){ return null; } }
+function load(){
+  try {
+    const s = JSON.parse(localStorage.getItem(KEY));
+    if(!s || !Array.isArray(s.lenses)) return null;
+    for(const L of s.lenses) for(const c of L.cats) c.color = themeColor(c.color);
+    return s;
+  } catch(e){ return null; }
+}
 
 function save(state){ try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e){} }
 // The derived numbers every view reads. Call derive(state) before reading them.
@@ -190,4 +213,4 @@ function answer(st, text){
 
 const sFmt = w => w <= 0 ? "birth" : fMY.format(wEnd(w));
 
-export { DAY, WEEK, BIG, PAL, EXAMPLES, uid, clamp, esc, nf, fMY, fD, parseD, todayMs, B, total, nowI, spanW, weekIdx, wMs, ageOf, yrs, yearOf, wEnd, wLabel, evMs, evLabel, isoW, bornNote, ink, sample, load, save, derive, lensBy, activeLens, findSpan, dateW, rng, catOf, spanAt, eb, newCat, findCat, paint, moveEdge, totals, brkHTML, tokens, tokW, parse, describe, answer, sFmt };
+export { DAY, WEEK, BIG, PAL, EXAMPLES, uid, clamp, esc, nf, fMY, fD, parseD, todayMs, B, total, nowI, spanW, weekIdx, wMs, ageOf, yrs, yearOf, wEnd, wLabel, evMs, evLabel, isoW, bornNote, ink, onColor, themeColor, sample, load, save, derive, lensBy, activeLens, findSpan, dateW, rng, catOf, spanAt, eb, newCat, findCat, paint, moveEdge, totals, brkHTML, tokens, tokW, parse, describe, answer, sFmt };

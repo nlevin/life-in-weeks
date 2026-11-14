@@ -26,35 +26,54 @@ values; this page records what is there and how the app uses it.
 | `--neutral-10` | `#1E1B16` | `#EEE7DA` | `--ink` | Text, the primary action fill, selected chips |
 | `--color-1` | `#C8553D` | `#EB7A5E` | `--accent` | This week, destructive labels, active drags |
 | `--color-2` | `#3D6FD9` | `#7FA2F0` | `--focus` | Keyboard focus outline |
+| `--color-3` … `--color-10` | `#D9805F` `#4F6D8F` `#7FA88B` `#E2B85C` `#9A7CB8` `#5FA3B8` `#C76B8A` `#8C8A5A` | same | none | Chapter and lens colors (see below) |
 | `--success`, `--warning`, `--error` | Graphical defaults | same | none | The app defines no status colors and does not use these yet |
 
 Neutrals 3, 8 and 9 were filled between the app's authored neighbors at import, so the ramp is whole.
-The primary action uses `neutral-10` (`primaryActionColor`).
+The primary action uses `neutral-10` (`primaryActionColor`). The app reads it through `--action` and
+`--on-action` (role-map tokens `primary` and `primary.foreground`), used by `.btn.pri`, so the editor's
+Primary Btn toggle switches primary buttons between ink and the accent.
+
+Chapter and lens colors are palette slots 3–10. Each category stores a reference such as
+`var(--color-5)` (`PAL` in `src/model.js`), people pick one from the theme swatches, and text on
+them uses `--on-color-N`. The Paint grid is a canvas: it resolves the variables when it draws and
+repaints when the theme changes. Older saves with hex colors are mapped to the nearest slot on load.
+
+### Palette explorer (development only)
+
+`src/dev/PaletteExplorer.jsx` adds a Palettes button (a wheel of the category colors) beside
+Graphical's GUI button in development; `src/dev/DevTools.jsx` mounts it with Agentation. It previews whole palettes
+(accent, the eight category colors and both neutral ramps) over the app, with curated recipes in
+`src/dev/palettes.js`, a Shuffle generator and locks to keep groups from the current theme. Saving
+posts to a Vite dev-server endpoint (`vite.config.js`), which writes the colors into
+`graphical/themes/graphical.json` and runs `graphical-install --theme graphical`. Nothing of it ships
+in production builds.
 
 Kept as authored, outside the theme:
 
 - `--veil` (`rgba` wash of the page color at 55%, over the future in Tracks). It has no matching translucent level.
-- Chapter and lens colors. People pick these per category; the sample palette lives in `src/model.js` and is content, not theme.
 - `--barh` and `--thead`: layout heights, not theme values.
 
 ## Type
 
-| Role | Variable | Family | Weights (regular / medium / heavy) |
+| Role | Variable | Family stack | Weights (regular / medium / heavy) |
 | --- | --- | --- | --- |
-| Body | `--font-body` (app alias `--font`) | Instrument Sans | 400 / 500 / 600 |
-| Display | `--font-display` (app alias `--display`) | Fraunces | 400 / 600 / 600 |
-| Data | `--font-data` | Instrument Sans | 400 / 500 / 600 |
+| Body | `--font-body` (app alias `--font`) | "Sidebar Geist", "Geist", sans-serif | 300 / 400 / 500 |
+| Display | `--font-display` (app alias `--display`) | "Timeless Grotesk", "Geist", sans-serif | 300 / 500 / 500 |
+| Data | `--font-data` | ui-monospace, SFMono-Regular, Menlo, monospace | 300 / 400 / 500 |
 
-Both families load from Google Fonts in `index.html` (Instrument Sans 400, 500, 600; Fraunces 400, 600).
-Numbers use the body face with `font-variant-numeric: tabular-nums` (the `.num` class).
+Geist loads from Google Fonts in `index.html` (variable, 300–500). "Sidebar Geist" is the name Graphical's
+editor uses for Geist; the installed Geist follows it in the stack. Timeless Grotesk isn't installed yet,
+so display text falls back to Geist until its files are added. Data uses system monospace faces.
+Numbers in the interface use the body face with `font-variant-numeric: tabular-nums` (the `.num` class).
 
-Body scale (`--size-*`, with `--line-*` and `--letter-spacing-*`): XXS 9, XS 11, S 13, M 15, L 18, XL 21, XXL 24 px.
-Display scale (`--display-size-*`): XXS 19, XS 22, S 26, M 30, L 36, XL 42, XXL 49 px.
+Body scale (`--size-*`, with `--line-*` and `--letter-spacing-*`): XXS 8, XS 10, S 12, M 13, L 16, XL 19, XXL 21 px.
+Display scale (`--display-size-*`): XXS 17, XS 20, S 23, M 27, L 32, XL 37, XXL 43 px.
 A text style sets size, line height and tracking together; weight is separate (`--weight-body-*`, `--weight-display-*`).
 
 ## Spacing, corners, strokes
 
-- Spacing (`--space-*`): zero 0, XXS 2, XS 4, S 6, M 8, L 11, XL 15, XXL 23 px. Larger gaps are written as multiples of XXL.
+- Spacing (`--space-*`): zero 0, XXS 1, XS 3, S 4, M 6, L 8, XL 11, XXL 17 px. Larger gaps are written as multiples of XXL.
 - Corners (`--radius-*`): zero 0, XS 3, S 6, M 8, L 10, XL 12, full.
 - Strokes (`--border-*`): none 0, S 1, M 1.5, L 2 px.
 - Shadows (`--shadow-s/m/l`): defined but transparent. The app's two shadows (selected tab, tray) are kept as authored.

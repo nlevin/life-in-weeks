@@ -1,10 +1,10 @@
 import { Fragment, useEffect, useLayoutEffect, useReducer, useRef, useState } from "react";
 import {
-  BIG, ageOf, bornNote, catOf, clamp, dateW, eb, evLabel, findSpan, ink, isoW, lensBy, moveEdge, newCat, nowI,
-  paint, spanAt, spanW, uid, wLabel, yearOf, yrs,
+  BIG, ageOf, bornNote, catOf, clamp, dateW, eb, evLabel, findSpan, isoW, lensBy, moveEdge, newCat, nowI,
+  onColor, paint, spanAt, spanW, uid, wLabel, yearOf, yrs,
 } from "../model.js";
 import { dragWin, hideTag, scrollerOf, showTag } from "../drag.js";
-import { Breakdown, EndHandle } from "../shared.jsx";
+import { Breakdown, EndHandle, ThemeSwatches } from "../shared.jsx";
 
 const PY = 40; // pixels per year
 const ty = (w) => (Math.min(w, spanW) / 52) * PY;
@@ -124,10 +124,10 @@ export default function Tracks({ life }) {
           </div>
           <div className="ctx">
             <div className="row">
-              <input type="color" className="swatch" value={c.color} aria-label="Color" onChange={(e) => onSpan((st, l, x) => { catOf(l, x.cat).color = e.target.value; }, { undo: false })} />
               <input className="txt grow" id="tName" value={c.label} aria-label="Name" autoComplete="off" onChange={(e) => onSpan((st, l, x) => { catOf(l, x.cat).label = e.target.value; }, { undo: false })} />
               <button className="btn pri" onClick={done}>Done</button>
             </div>
+            <ThemeSwatches value={c.color} onChange={(color) => onSpan((st, l, x) => { catOf(l, x.cat).color = color; })} />
             <div className="row" style={{ marginTop: "var(--space-m)" }}>
               <span className="grow num">{wLabel(s.a)} → {wLabel(s.b)}</span>
               {can && <button className="btn" data-act="split" onClick={split}>Split at age {ageOf(sel.w)}</button>}
@@ -206,7 +206,7 @@ export default function Tracks({ life }) {
                 return (
                   <Fragment key={s.id}>
                     <div className={`tspan${hgt < 34 ? " tiny" : ""}${sel?.id === s.id ? " sel" : ""}`} data-span={s.id}
-                      style={{ top, height: Math.max(0, hgt - 1), background: c.color, color: ink(c.color) }}>
+                      style={{ top, height: Math.max(0, hgt - 1), background: c.color, color: onColor(c.color) }}>
                       <div className="tl"><b>{c.label || "Untitled"}</b><small>{yrs(eb(s) - s.a)} yrs</small></div>
                     </div>
                     {showA && <div className={`seam${T.onSeam === s.id + "a" ? " on" : ""}`} data-span={s.id} data-side="a" role="separator" aria-label={`Drag to move the start of ${c.label}`} style={{ top }}></div>}

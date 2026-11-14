@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { ageOf, brkHTML, clamp, nowI } from "./model.js";
+import { PAL, ageOf, brkHTML, clamp, nowI } from "./model.js";
 import { dragWin } from "./drag.js";
 
 // The bar under the grid or timeline: drag it to change life expectancy.
@@ -40,4 +40,16 @@ export function EndHandle({ life, yToYears }) {
 
 export function Breakdown({ lens }) {
   return <div dangerouslySetInnerHTML={{ __html: brkHTML(lens) }} />;
+}
+
+// Pick a category color from the theme's palette, so it follows theme edits.
+export function ThemeSwatches({ value, onChange }) {
+  return (
+    <div className="swatches" role="radiogroup" aria-label="Color">
+      {PAL.map((c, i) => (
+        <button key={c} type="button" role="radio" aria-checked={c === value} aria-label={`Theme color ${i + 3}`}
+          style={{ background: c }} onClick={() => onChange(c)} />
+      ))}
+    </div>
+  );
 }

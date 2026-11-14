@@ -23,6 +23,11 @@ Then open the local URL Vite prints (http://localhost:5173/ by default).
 
 The app's styles run on Graphical's design system. The theme is in `graphical/`, and in development a Graphical editor panel opens beside the app; sign in there with your own Graphical account to edit the theme. The editor is not part of production builds.
 
+Two more development-only tools sit beside Graphical's GUI button at the bottom right:
+
+- **Palettes** (the color wheel) previews whole palettes across the app and saves the one you pick into the Graphical theme.
+- **Agentation** lets you click any element, write what should change, and copy the notes as markdown to paste into an agent. See [agentation.com](https://www.agentation.com).
+
 ## Layout
 
 - `src/model.js` – the shared life model: dates, spans, events and the plain-language parser.
