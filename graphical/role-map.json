@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "profile": "css-variables",
+  "modes": {
+    "kind": "media"
+  },
+  "appearance": {
+    "initial": {
+      "navigation": "blended",
+      "grouping": "cards",
+      "surface": "outlined"
+    },
+    "navigation": {
+      "selector": ".bar",
+      "background": "--paper",
+      "border": "--line"
+    },
+    "cards": {
+      "selector": ".tray, .ans",
+      "background": "--card"
+    }
+  },
+  "tokens": [
+    {
+      "variable": "--paper",
+      "token": "neutral-1",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--card",
+      "token": "neutral-2",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--line",
+      "token": "neutral-4",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--empty",
+      "token": "neutral-5",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--faint",
+      "token": "neutral-6",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--muted",
+      "token": "neutral-7",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--ink",
+      "token": "neutral-10",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--accent",
+      "token": "color-1",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--focus",
+      "token": "color-2",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--font",
+      "token": "font.body",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    },
+    {
+      "variable": "--display",
+      "token": "font.display",
+      "defined": {
+        "path": "src/styles.css",
+        "selector": ":root"
+      }
+    }
+  ],
+  "fixed": [
+    "--veil"
+  ]
+}

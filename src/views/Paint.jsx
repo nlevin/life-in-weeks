@@ -236,7 +236,7 @@ export default function Paint({ life }) {
       <div className="hint">{P.anchor != null ? <>Started at <b>{wLabel(P.anchor)}</b>. Now tap the last week.</> : "Drag across the grid to paint. Or tap the first week, then the last."}</div>
     </>
   );
-  else if (P.brush === "erase") ctx = <div className="hint" style={{ margin: 0 }}>{P.anchor != null ? "Now tap the last week to clear." : "Drag across weeks to clear them."}</div>;
+  else if (P.brush === "erase") ctx = <div className="hint" style={{ margin: "var(--space-zero)" }}>{P.anchor != null ? "Now tap the last week to clear." : "Drag across weeks to clear them."}</div>;
   else {
     const i = Math.min(P.sel ?? nowI, spanW - 1), evs = state.events.filter((e) => e.w === i);
     ctx = (
@@ -246,7 +246,7 @@ export default function Paint({ life }) {
             <b className="num">{P.selD ? fD.format(parseD(P.selD)) : "Week of " + fD.format(wMs(i))}</b>{i === nowI ? " · this week" : ""}<br />
             <span className="num">You at {ageOf(i)}, week {(i % 52) + 1} of that year</span>
           </span>
-          <input type="date" className="txt" style={{ width: "auto", fontSize: 14 }} value={P.selD || isoW(i)} onChange={jumpDate} aria-label="Jump to a date" />
+          <input type="date" className="txt" style={{ width: "auto", fontSize: "var(--size-m)", lineHeight: "var(--line-m)", letterSpacing: "var(--letter-spacing-m)" }} value={P.selD || isoW(i)} onChange={jumpDate} aria-label="Jump to a date" />
         </div>
         <div className="tags">
           {state.lenses.map((l) => { const s = spanAt(l, i), c = s && catOf(l, s.cat); return <span key={l.id}><i style={{ background: c ? c.color : "var(--empty)" }}></i>{c ? c.label : l.name + ": not set"}</span>; })}

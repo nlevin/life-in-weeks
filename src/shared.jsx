@@ -16,10 +16,12 @@ export function EndHandle({ life, yToYears }) {
     snap();
     el.current.classList.add("on");
     const off = getState().exp - yToYears(e.clientY);
-    document.body.style.minHeight = document.documentElement.scrollHeight + "px";
+    // Hold the page height during the drag, so shortening the grid doesn't pull the handle away.
+    const main = el.current.closest("main");
+    if (main) main.style.minHeight = main.offsetHeight + "px";
     dragWin(
       (ev) => set(yToYears(ev.clientY) + off),
-      () => { document.body.style.minHeight = ""; el.current?.classList.remove("on"); }
+      () => { if (main) main.style.minHeight = ""; el.current?.classList.remove("on"); }
     );
   };
   const key = (e) => {

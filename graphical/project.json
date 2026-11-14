@@ -1,0 +1,12 @@
+{
+  "format": "graphical-project-v1",
+  "active": "graphical",
+  "themes": [
+    {
+      "id": "graphical",
+      "name": "A life in weeks",
+      "path": "themes/graphical.json"
+    }
+  ],
+  "id": "1e9ca253-c794-4b13-9f62-1479085101ea"
+}

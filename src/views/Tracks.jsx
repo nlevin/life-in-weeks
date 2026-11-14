@@ -3,7 +3,7 @@ import {
   BIG, ageOf, bornNote, catOf, clamp, dateW, eb, evLabel, findSpan, ink, isoW, lensBy, moveEdge, newCat, nowI,
   paint, spanAt, spanW, uid, wLabel, yearOf, yrs,
 } from "../model.js";
-import { dragWin, hideTag, showTag } from "../drag.js";
+import { dragWin, hideTag, scrollerOf, showTag } from "../drag.js";
 import { Breakdown, EndHandle } from "../shared.jsx";
 
 const PY = 40; // pixels per year
@@ -25,7 +25,10 @@ export default function Tracks({ life }) {
   };
   const toToday = () => {
     const tb = tbRef.current;
-    if (tb) window.scrollTo({ top: tb.getBoundingClientRect().top + scrollY + ty(nowI) - innerHeight * 0.55 });
+    if (!tb) return;
+    const sc = scrollerOf(tb), doc = sc === document.scrollingElement;
+    const top = doc ? 0 : sc.getBoundingClientRect().top, h = doc ? innerHeight : sc.clientHeight;
+    sc.scrollTo({ top: tb.getBoundingClientRect().top - top + sc.scrollTop + ty(nowI) - h * 0.55 });
   };
 
   useLayoutEffect(() => {
@@ -35,9 +38,9 @@ export default function Tracks({ life }) {
   useEffect(() => {
     let raf;
     const on = () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(read); };
-    window.addEventListener("scroll", on, { passive: true });
+    document.addEventListener("scroll", on, { passive: true, capture: true });
     const t = requestAnimationFrame(toToday);
-    return () => { window.removeEventListener("scroll", on); cancelAnimationFrame(raf); cancelAnimationFrame(t); hideTag(); };
+    return () => { document.removeEventListener("scroll", on, { capture: true }); cancelAnimationFrame(raf); cancelAnimationFrame(t); hideTag(); };
   }, []);
   useEffect(() => {
     if (!T.focus) return;
@@ -125,7 +128,7 @@ export default function Tracks({ life }) {
               <input className="txt grow" id="tName" value={c.label} aria-label="Name" autoComplete="off" onChange={(e) => onSpan((st, l, x) => { catOf(l, x.cat).label = e.target.value; }, { undo: false })} />
               <button className="btn pri" onClick={done}>Done</button>
             </div>
-            <div className="row" style={{ marginTop: 8 }}>
+            <div className="row" style={{ marginTop: "var(--space-m)" }}>
               <span className="grow num">{wLabel(s.a)} → {wLabel(s.b)}</span>
               {can && <button className="btn" data-act="split" onClick={split}>Split at age {ageOf(sel.w)}</button>}
               <button className="btn del" onClick={clearSpan}>Clear</button>
@@ -137,14 +140,14 @@ export default function Tracks({ life }) {
   } else if (sel?.type === "ev") {
     const e = state.events.find((x) => x.id === sel.id);
     if (e) tray = (
-      <div className="ctx" style={{ margin: 0 }}>
+      <div className="ctx" style={{ margin: "var(--space-zero)" }}>
         <div className="row">
           <input className="txt grow" id="tName" value={e.label} aria-label="Event name" autoComplete="off" onChange={(ev) => update((st) => { st.events.find((x) => x.id === e.id).label = ev.target.value; }, { undo: false })} />
           <button className="btn del" onClick={() => delEvent(e.id)}>Delete</button>
           <button className="btn pri" onClick={done}>Done</button>
         </div>
-        <div className="row" style={{ marginTop: 8 }}>
-          <input type="date" className="txt" style={{ width: "auto", fontSize: 14 }} value={e.d || isoW(e.w)} onChange={setEvDate} aria-label="Event date" />
+        <div className="row" style={{ marginTop: "var(--space-m)" }}>
+          <input type="date" className="txt" style={{ width: "auto", fontSize: "var(--size-m)", lineHeight: "var(--line-m)", letterSpacing: "var(--letter-spacing-m)" }} value={e.d || isoW(e.w)} onChange={setEvDate} aria-label="Event date" />
           <span className="grow num" id="tEvWhen">{evLabel(e)}{bornNote(e)}</span>
         </div>
         <div className="hint">Set the date here, or drag the pin.</div>
@@ -153,7 +156,7 @@ export default function Tracks({ life }) {
   } else if (sel?.type === "lens") {
     const L = lensBy(state, sel.id);
     if (L) tray = (
-      <div className="ctx" style={{ margin: 0 }}>
+      <div className="ctx" style={{ margin: "var(--space-zero)" }}>
         <div className="row">
           <input className="txt grow" id="tName" value={L.name} aria-label="Track name" autoComplete="off" onChange={(e) => update((st) => { lensBy(st, L.id).name = e.target.value; }, { undo: false })} />
           <button className="btn del" onClick={() => delLens(L.id)}>Delete</button>
@@ -165,7 +168,7 @@ export default function Tracks({ life }) {
   }
   if (!tray) tray = (
     <div className="row">
-      <span className="grow" style={{ fontSize: 13, color: "var(--muted)" }}>Tap a striped gap to fill it. Tap the Events column to pin a moment.</span>
+      <span className="grow" style={{ fontSize: "var(--size-s)", lineHeight: "var(--line-s)", letterSpacing: "var(--letter-spacing-s)", color: "var(--muted)" }}>Tap a striped gap to fill it. Tap the Events column to pin a moment.</span>
       <button className="btn" onClick={toToday}>Today</button>
       <button className="btn" onClick={addLens}>Add track</button>
     </div>
@@ -185,7 +188,7 @@ export default function Tracks({ life }) {
           return (
             <button key={L.id} aria-label={`Edit ${L.name} track`} onClick={() => { T.sel = { type: "lens", id: L.id }; rerender(); }}>
               <small>{L.name || "Untitled"}</small>
-              <span className="v">{c ? <><i style={{ background: c.color }}></i>{c.label}</> : <span style={{ color: "var(--faint)", fontWeight: 400 }}>Not set</span>}</span>
+              <span className="v">{c ? <><i style={{ background: c.color }}></i>{c.label}</> : <span style={{ color: "var(--faint)", fontWeight: "var(--weight-body-regular)" }}>Not set</span>}</span>
             </button>
           );
         }) : <div></div>}

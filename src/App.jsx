@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLife } from "./store.js";
 import { parseD, sample, todayMs, parse, answer } from "./model.js";
+import { scrollerOf } from "./drag.js";
 import Paint from "./views/Paint.jsx";
 import Tracks from "./views/Tracks.jsx";
 import Tell from "./views/Tell.jsx";
+import EditorRoot from "../graphical/editor-root.jsx";
 
 const VIEWS = {
   paint: { n: 1, label: "Paint", title: "The grid is the editor", text: "Pick a color, drag it across your weeks, and watch the totals change. Drag the bar under the grid to set your life expectancy.", C: Paint },
@@ -29,7 +31,7 @@ export default function App() {
   const go = (name) => {
     setView(name);
     try { location.hash = name; } catch (e) {}
-    window.scrollTo(0, 0);
+    scrollerOf(document.getElementById("view")).scrollTo(0, 0);
   };
   const reset = () => update((st) => {
     const fresh = sample(st.birth);
@@ -44,7 +46,7 @@ export default function App() {
 
   const V = VIEWS[view];
   return (
-    <>
+    <EditorRoot route={`/#${view}`}>
       <header className="bar">
         <nav className="tabs" role="tablist" aria-label="Design direction">
           {Object.entries(VIEWS).map(([k, v]) => (
@@ -67,6 +69,6 @@ export default function App() {
         </footer>
       </main>
       <div className="dragtag" id="dragtag" hidden></div>
-    </>
+    </EditorRoot>
   );
 }

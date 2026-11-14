@@ -1,4 +1,13 @@
 // Pointer-drag helpers shared by the views.
+
+// The element that scrolls the page: the document, or a scrolling wrapper around the app.
+export function scrollerOf(el) {
+  for (let n = el?.parentElement; n && n !== document.body && n !== document.documentElement; n = n.parentElement) {
+    const o = getComputedStyle(n).overflowY;
+    if (o === "auto" || o === "scroll") return n;
+  }
+  return document.scrollingElement || document.documentElement;
+}
 let asRaf = null, asEv = null, asFn = null;
 
 // While a drag is held near the top or bottom edge, scroll the page and keep the drag going.
@@ -13,9 +22,9 @@ function asTick() {
   const bot = (tr ? Math.min(innerHeight, tr.getBoundingClientRect().top) : innerHeight) - 28;
   const d = y < top ? -Math.min(16, (top - y) / 3 + 3) : y > bot ? Math.min(16, (y - bot) / 3 + 3) : 0;
   if (!d) return;
-  const before = scrollY;
-  window.scrollBy(0, d);
-  if (scrollY !== before) asFn(asEv);
+  const sc = scrollerOf(tr || document.getElementById("view")), before = sc.scrollTop;
+  sc.scrollBy(0, d);
+  if (sc.scrollTop !== before) asFn(asEv);
   asRaf = requestAnimationFrame(asTick);
 }
 export function asStop() {

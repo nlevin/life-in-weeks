@@ -1,0 +1,2750 @@
+{
+  "format": "graphical-install-report-v1",
+  "dryRun": false,
+  "project": "graphical",
+  "inputs": {
+    "inventory": "graphical/install/style-inventory.json",
+    "input": "graphical/install/import.json",
+    "keep": []
+  },
+  "totals": [
+    {
+      "label": "Colors",
+      "before": 11,
+      "after": 9,
+      "derived": 0,
+      "kept": 0
+    },
+    {
+      "label": "Text sizes",
+      "before": 13,
+      "after": 6,
+      "derived": 0,
+      "kept": 0
+    },
+    {
+      "label": "Font weights",
+      "before": 3,
+      "after": 3,
+      "derived": 0,
+      "kept": 0
+    },
+    {
+      "label": "Letter spacing",
+      "before": 1,
+      "after": 0,
+      "derived": 0,
+      "kept": 1
+    },
+    {
+      "label": "Spacing",
+      "before": 16,
+      "after": 7,
+      "derived": 2,
+      "kept": 0
+    },
+    {
+      "label": "Corners",
+      "before": 9,
+      "after": 5,
+      "derived": 0,
+      "kept": 0
+    },
+    {
+      "label": "Borders",
+      "before": 4,
+      "after": 3,
+      "derived": 0,
+      "kept": 0
+    },
+    {
+      "label": "Shadows",
+      "before": 2,
+      "after": 0,
+      "derived": 0,
+      "kept": 2
+    }
+  ],
+  "families": {
+    "color": {
+      "rewritten": 1,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 95,
+      "kept": 17,
+      "preserved": 7
+    },
+    "font-family": {
+      "rewritten": 9,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 0,
+      "kept": 0,
+      "preserved": 1
+    },
+    "font-size": {
+      "rewritten": 44,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 0,
+      "kept": 0,
+      "preserved": 0
+    },
+    "line-height": {
+      "rewritten": 41,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 0,
+      "kept": 0,
+      "preserved": 7
+    },
+    "spacing": {
+      "rewritten": 115,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 0,
+      "kept": 0,
+      "preserved": 2
+    },
+    "border-width": {
+      "rewritten": 25,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 0,
+      "kept": 0,
+      "preserved": 1
+    },
+    "radius": {
+      "rewritten": 33,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 0,
+      "kept": 0,
+      "preserved": 3
+    },
+    "font-weight": {
+      "rewritten": 23,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 0,
+      "kept": 0,
+      "preserved": 0
+    },
+    "shadow": {
+      "rewritten": 0,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 0,
+      "kept": 2,
+      "preserved": 3
+    },
+    "letter-spacing": {
+      "rewritten": 43,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 0,
+      "kept": 1,
+      "preserved": 0
+    },
+    "token": {
+      "rewritten": 20,
+      "removed": 0,
+      "skipped": 0,
+      "tokens": 0,
+      "kept": 0,
+      "preserved": 0
+    }
+  },
+  "files": [
+    "src/styles.css",
+    "src/views/Paint.jsx",
+    "src/views/Tracks.jsx"
+  ],
+  "written": [
+    "graphical/project.json",
+    "graphical/themes/graphical.json",
+    "graphical/role-map.json",
+    "graphical/generated/theme.css",
+    "graphical/README.md",
+    "graphical/install/install-report.json",
+    "graphical/install/install-report.md"
+  ],
+  "fonts": {},
+  "changes": [
+    {
+      "path": "src/styles.css",
+      "line": 11,
+      "text": "html,body {font-family:var(--font)}",
+      "family": "font-family",
+      "after": "var(--font-body)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 11,
+      "text": "html,body {font-size:15px}",
+      "family": "font-size",
+      "after": "var(--size-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 11,
+      "text": "html,body {margin:0}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 19,
+      "text": ".bar {border-bottom:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 19,
+      "text": ".bar {padding:0 10px}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 19,
+      "text": ".bar {padding:0 10px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 19,
+      "text": ".bar {gap:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 20,
+      "text": ".tabs {border-radius:10px}",
+      "family": "radius",
+      "after": "var(--radius-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 20,
+      "text": ".tabs {gap:2px}",
+      "family": "spacing",
+      "after": "var(--space-xxs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 20,
+      "text": ".tabs {padding:3px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 21,
+      "text": ".tabs button {font-size:14px}",
+      "family": "font-size",
+      "after": "var(--size-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 21,
+      "text": ".tabs button {font-weight:600}",
+      "family": "font-weight",
+      "after": "var(--weight-body-heavy)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 21,
+      "text": ".tabs button {border-radius:8px}",
+      "family": "radius",
+      "after": "var(--radius-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 21,
+      "text": ".tabs button {padding:6px 4px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 21,
+      "text": ".tabs button {padding:6px 4px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 23,
+      "text": ".tabs button span {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 23,
+      "text": ".tabs button span {margin-right:3px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 25,
+      "text": ".ghost {border:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 25,
+      "text": ".ghost {font-size:13px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 25,
+      "text": ".ghost {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 25,
+      "text": ".ghost {border-radius:8px}",
+      "family": "radius",
+      "after": "var(--radius-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 25,
+      "text": ".ghost {padding:6px 10px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 25,
+      "text": ".ghost {padding:6px 10px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 27,
+      "text": "main {padding:0 12px}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 27,
+      "text": "main {padding:0 12px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 28,
+      "text": ".pitch {font-size:13.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 28,
+      "text": ".pitch {margin:10px 0 8px}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 28,
+      "text": ".pitch {margin:10px 0 8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 28,
+      "text": ".pitch {margin:10px 0 8px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 29,
+      "text": ".pitch b {font-family:var(--display)}",
+      "family": "font-family",
+      "after": "var(--font-display)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 29,
+      "text": ".pitch b {font-size:17px}",
+      "family": "font-size",
+      "after": "var(--size-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 29,
+      "text": ".pitch b {font-weight:600}",
+      "family": "font-weight",
+      "after": "var(--weight-display-heavy)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 29,
+      "text": ".pitch b {margin-bottom:2px}",
+      "family": "spacing",
+      "after": "var(--space-xxs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 30,
+      "text": "footer {border-top:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 30,
+      "text": "footer {font-size:13px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 30,
+      "text": "footer {margin:28px 0 40px}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 30,
+      "text": "footer {margin:28px 0 40px}",
+      "family": "spacing",
+      "after": "calc(var(--space-xxl) * 1.25)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 30,
+      "text": "footer {margin:28px 0 40px}",
+      "family": "spacing",
+      "after": "calc(var(--space-xxl) * 1.75)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 30,
+      "text": "footer {gap:10px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 30,
+      "text": "footer {padding-top:14px}",
+      "family": "spacing",
+      "after": "var(--space-xl)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 31,
+      "text": "footer input {border:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 31,
+      "text": "footer input {border-radius:8px}",
+      "family": "radius",
+      "after": "var(--radius-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 31,
+      "text": "footer input {padding:6px 8px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 31,
+      "text": "footer input {padding:6px 8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 34,
+      "text": ".chip {border:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 34,
+      "text": ".chip {font-size:13.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 34,
+      "text": ".chip {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 34,
+      "text": ".chip {border-radius:999px}",
+      "family": "radius",
+      "after": "var(--radius-full)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 34,
+      "text": ".chip {gap:6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 34,
+      "text": ".chip {padding:6px 11px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 34,
+      "text": ".chip {padding:6px 11px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 35,
+      "text": ".chip i {border-radius:3px}",
+      "family": "radius",
+      "after": "var(--radius-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 36,
+      "text": ".chip b {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 40,
+      "text": ".tray {border:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 40,
+      "text": ".tray {border-radius:14px 14px 0 0}",
+      "family": "radius",
+      "after": "var(--radius-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 40,
+      "text": ".tray {border-radius:14px 14px 0 0}",
+      "family": "radius",
+      "after": "var(--radius-xl)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 40,
+      "text": ".tray {margin:10px -4px 0}",
+      "family": "spacing",
+      "after": "calc(var(--space-xs) * -1)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 40,
+      "text": ".tray {margin:10px -4px 0}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 40,
+      "text": ".tray {margin:10px -4px 0}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 41,
+      "text": ".chips {padding:1px}",
+      "family": "spacing",
+      "after": "var(--space-xxs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 41,
+      "text": ".chips {gap:6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 43,
+      "text": ".ctx {font-size:13.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 43,
+      "text": ".ctx {margin-top:9px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 45,
+      "text": ".row {gap:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 47,
+      "text": ".txt {border:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 47,
+      "text": ".txt {font-size:16px}",
+      "family": "font-size",
+      "after": "var(--size-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 47,
+      "text": ".txt {border-radius:8px}",
+      "family": "radius",
+      "after": "var(--radius-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 47,
+      "text": ".txt {padding:8px 10px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 47,
+      "text": ".txt {padding:8px 10px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 48,
+      "text": ".swatch {border:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 48,
+      "text": ".swatch {border-radius:8px}",
+      "family": "radius",
+      "after": "var(--radius-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 48,
+      "text": ".swatch {padding:3px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 49,
+      "text": ".swatch::-webkit-color-swatch {border-radius:5px}",
+      "family": "radius",
+      "after": "var(--radius-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 49,
+      "text": ".swatch::-moz-color-swatch {border-radius:5px}",
+      "family": "radius",
+      "after": "var(--radius-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 49,
+      "text": ".swatch::-webkit-color-swatch-wrapper {padding:0}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 50,
+      "text": ".btn {border:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 50,
+      "text": ".btn {font-size:14px}",
+      "family": "font-size",
+      "after": "var(--size-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 50,
+      "text": ".btn {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 50,
+      "text": ".btn {border-radius:8px}",
+      "family": "radius",
+      "after": "var(--radius-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 50,
+      "text": ".btn {padding:8px 12px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 50,
+      "text": ".btn {padding:8px 12px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 54,
+      "text": ".hint {font-size:12.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 54,
+      "text": ".hint {margin-top:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 55,
+      "text": ".tags {font-size:13px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 55,
+      "text": ".tags {margin:6px 0 8px}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 55,
+      "text": ".tags {margin:6px 0 8px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 55,
+      "text": ".tags {margin:6px 0 8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 55,
+      "text": ".tags {gap:4px 12px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 55,
+      "text": ".tags {gap:4px 12px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 56,
+      "text": ".tags i {border-radius:3px}",
+      "family": "radius",
+      "after": "var(--radius-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 56,
+      "text": ".tags i {margin-right:5px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 57,
+      "text": ".evs {gap:6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 57,
+      "text": ".evs {margin-bottom:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 58,
+      "text": ".evs button {border:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 58,
+      "text": ".evs button {font-size:13px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 58,
+      "text": ".evs button {border-radius:999px}",
+      "family": "radius",
+      "after": "var(--radius-full)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 58,
+      "text": ".evs button {padding:4px 10px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 58,
+      "text": ".evs button {padding:4px 10px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 59,
+      "text": ".brk {font-size:13.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 59,
+      "text": ".brk {gap:4px 10px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 59,
+      "text": ".brk {gap:4px 10px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 59,
+      "text": ".brk {margin-top:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 60,
+      "text": ".brk i {border-radius:3px}",
+      "family": "radius",
+      "after": "var(--radius-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 62,
+      "text": ".endh {border:1px dashed var(--faint)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 62,
+      "text": ".endh {font-size:13.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 62,
+      "text": ".endh {border-radius:10px}",
+      "family": "radius",
+      "after": "var(--radius-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 62,
+      "text": ".endh {margin-top:6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 62,
+      "text": ".endh {gap:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 63,
+      "text": ".endh b {font-family:var(--display)}",
+      "family": "font-family",
+      "after": "var(--font-display)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 63,
+      "text": ".endh b {font-size:17px}",
+      "family": "font-size",
+      "after": "var(--size-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 65,
+      "text": ".grip {border-radius:2px}",
+      "family": "radius",
+      "after": "var(--radius-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 68,
+      "text": ".p-stats {font-size:13.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 68,
+      "text": ".p-stats {margin-bottom:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 69,
+      "text": ".p-stats b {font-family:var(--display)}",
+      "family": "font-family",
+      "after": "var(--font-display)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 69,
+      "text": ".p-stats b {font-size:17px}",
+      "family": "font-size",
+      "after": "var(--size-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 70,
+      "text": ".gridwrap {margin-top:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 72,
+      "text": ".bubble {font-size:12.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 72,
+      "text": ".bubble {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 72,
+      "text": ".bubble {border-radius:8px}",
+      "family": "radius",
+      "after": "var(--radius-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 72,
+      "text": ".bubble {padding:5px 9px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 72,
+      "text": ".bubble {padding:5px 9px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 73,
+      "text": ".adj {gap:6px 6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 74,
+      "text": ".adj output {font-size:14px}",
+      "family": "font-size",
+      "after": "var(--size-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 74,
+      "text": ".adj output {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 75,
+      "text": ".adj .st {border:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 75,
+      "text": ".adj .st {font-size:15px}",
+      "family": "font-size",
+      "after": "var(--size-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 75,
+      "text": ".adj .st {border-radius:8px}",
+      "family": "radius",
+      "after": "var(--radius-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 77,
+      "text": ".adj-foot {margin-top:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 80,
+      "text": ".t-head {border-bottom:2px solid var(--ink)}",
+      "family": "border-width",
+      "after": "var(--border-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 80,
+      "text": ".t-head {padding:6px 0 5px}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 80,
+      "text": ".t-head {padding:6px 0 5px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 80,
+      "text": ".t-head {padding:6px 0 5px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 81,
+      "text": ".t-head>* {padding:0 4px}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 81,
+      "text": ".t-head>* {padding:0 4px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 82,
+      "text": ".t-head small {font-size:10.5px}",
+      "family": "font-size",
+      "after": "var(--size-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 82,
+      "text": ".t-head small {font-weight:600}",
+      "family": "font-weight",
+      "after": "var(--weight-body-heavy)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 83,
+      "text": ".t-head .v {font-size:13.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 83,
+      "text": ".t-head .v {font-weight:600}",
+      "family": "font-weight",
+      "after": "var(--weight-body-heavy)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 84,
+      "text": ".t-head .v i {border-radius:3px}",
+      "family": "radius",
+      "after": "var(--radius-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 84,
+      "text": ".t-head .v i {margin-right:4px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 85,
+      "text": ".t-head .age {font-family:var(--display)}",
+      "family": "font-family",
+      "after": "var(--font-display)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 85,
+      "text": ".t-head .age {font-size:19px}",
+      "family": "font-size",
+      "after": "var(--display-size-xxs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 85,
+      "text": ".t-head .age {font-weight:600}",
+      "family": "font-weight",
+      "after": "var(--weight-display-heavy)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 85,
+      "text": ".t-head .age {padding-top:10px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 86,
+      "text": ".t-body {margin-top:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 88,
+      "text": ".t-axis span {font-size:11px}",
+      "family": "font-size",
+      "after": "var(--size-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 89,
+      "text": ".t-lanes {gap:3px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 90,
+      "text": ".lane {border-radius:6px}",
+      "family": "radius",
+      "after": "var(--radius-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 91,
+      "text": ".tspan {border-radius:6px}",
+      "family": "radius",
+      "after": "var(--radius-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 92,
+      "text": ".tspan.sel {outline:2.5px solid var(--ink)}",
+      "family": "border-width",
+      "after": "var(--border-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 93,
+      "text": ".tl {font-size:12.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 93,
+      "text": ".tl {padding:5px 6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 93,
+      "text": ".tl {padding:5px 6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 94,
+      "text": ".tl b {font-weight:600}",
+      "family": "font-weight",
+      "after": "var(--weight-body-heavy)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 95,
+      "text": ".tl small {font-size:11.5px}",
+      "family": "font-size",
+      "after": "var(--size-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 97,
+      "text": ".seam {margin-top:-14px}",
+      "family": "spacing",
+      "after": "calc(var(--space-xl) * -1)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 98,
+      "text": ".seam::after {border-radius:3px}",
+      "family": "radius",
+      "after": "var(--radius-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 99,
+      "text": ".seam.on::after {border-radius:0}",
+      "family": "radius",
+      "after": "var(--radius-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 100,
+      "text": ".t-evlane {border-left:1px dashed var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 101,
+      "text": ".tev {border:1px solid var(--ink)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 101,
+      "text": ".tev {font-size:11.5px}",
+      "family": "font-size",
+      "after": "var(--size-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 101,
+      "text": ".tev {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 101,
+      "text": ".tev {border-radius:999px}",
+      "family": "radius",
+      "after": "var(--radius-full)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 101,
+      "text": ".tev {padding:3px 7px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 101,
+      "text": ".tev {padding:3px 7px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 103,
+      "text": ".tevline {border-top:1px dashed var(--ink)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 105,
+      "text": ".nowl {border-top:2px solid var(--accent)}",
+      "family": "border-width",
+      "after": "var(--border-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 106,
+      "text": ".nowl span {color:#fff}",
+      "family": "color",
+      "after": "var(--neutral-2)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 106,
+      "text": ".nowl span {font-size:10.5px}",
+      "family": "font-size",
+      "after": "var(--size-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 106,
+      "text": ".nowl span {font-weight:600}",
+      "family": "font-weight",
+      "after": "var(--weight-body-heavy)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 106,
+      "text": ".nowl span {border-radius:4px}",
+      "family": "radius",
+      "after": "var(--radius-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 106,
+      "text": ".nowl span {padding:1px 5px}",
+      "family": "spacing",
+      "after": "var(--space-xxs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 106,
+      "text": ".nowl span {padding:1px 5px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 107,
+      "text": ".dragtag {font-size:12.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 107,
+      "text": ".dragtag {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 107,
+      "text": ".dragtag {border-radius:8px}",
+      "family": "radius",
+      "after": "var(--radius-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 107,
+      "text": ".dragtag {padding:5px 9px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 107,
+      "text": ".dragtag {padding:5px 9px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 110,
+      "text": ".prose {font-family:var(--display)}",
+      "family": "font-family",
+      "after": "var(--font-display)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 110,
+      "text": ".prose {font-size:21px}",
+      "family": "font-size",
+      "after": "var(--display-size-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 110,
+      "text": ".prose {margin:4px 0 14px}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 110,
+      "text": ".prose {margin:4px 0 14px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 110,
+      "text": ".prose {margin:4px 0 14px}",
+      "family": "spacing",
+      "after": "var(--space-xl)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 111,
+      "text": ".prose b {font-weight:600}",
+      "family": "font-weight",
+      "after": "var(--weight-body-heavy)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 112,
+      "text": ".prose .stp {border-bottom:2px solid var(--accent)}",
+      "family": "border-width",
+      "after": "var(--border-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 112,
+      "text": ".prose .stp {gap:2px}",
+      "family": "spacing",
+      "after": "var(--space-xxs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 113,
+      "text": ".prose .stp button {font-family:var(--font)}",
+      "family": "font-family",
+      "after": "var(--font-body)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 113,
+      "text": ".prose .stp button {font-size:17px}",
+      "family": "font-size",
+      "after": "var(--size-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 114,
+      "text": ".ribbon {margin-bottom:10px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 115,
+      "text": ".ribbon .lbl {font-size:12.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 115,
+      "text": ".ribbon .lbl {margin-bottom:4px}",
+      "family": "spacing",
+      "after": "var(--space-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 116,
+      "text": ".rb {border-radius:6px}",
+      "family": "radius",
+      "after": "var(--radius-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 117,
+      "text": ".rb button {border-right:1px solid var(--paper)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 117,
+      "text": ".rb button {padding:0}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 120,
+      "text": ".ans {border:1px solid var(--ink)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 120,
+      "text": ".ans {border-radius:12px}",
+      "family": "radius",
+      "after": "var(--radius-xl)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 120,
+      "text": ".ans {margin:14px 0}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 120,
+      "text": ".ans {margin:14px 0}",
+      "family": "spacing",
+      "after": "var(--space-xl)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 120,
+      "text": ".ans {padding:12px 14px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 120,
+      "text": ".ans {padding:12px 14px}",
+      "family": "spacing",
+      "after": "var(--space-xl)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 123,
+      "text": ".ans .q {font-size:12.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 123,
+      "text": ".ans .q {gap:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 124,
+      "text": ".ans .q button {font-size:18px}",
+      "family": "font-size",
+      "after": "var(--size-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 124,
+      "text": ".ans .q button {margin:-8px -8px 0 0}",
+      "family": "spacing",
+      "after": "calc(var(--space-m) * -1)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 124,
+      "text": ".ans .q button {margin:-8px -8px 0 0}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 125,
+      "text": ".ans p {font-family:var(--display)}",
+      "family": "font-family",
+      "after": "var(--font-display)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 125,
+      "text": ".ans p {font-size:18px}",
+      "family": "font-size",
+      "after": "var(--size-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 125,
+      "text": ".ans p {margin:6px 0 0}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 125,
+      "text": ".ans p {margin:6px 0 0}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 126,
+      "text": ".ans p b {font-weight:600}",
+      "family": "font-weight",
+      "after": "var(--weight-body-heavy)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 127,
+      "text": ".ans p i {border-radius:3px}",
+      "family": "radius",
+      "after": "var(--radius-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 127,
+      "text": ".ans p i {margin-right:6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 128,
+      "text": "h2 {font-family:var(--display)}",
+      "family": "font-family",
+      "after": "var(--font-display)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 128,
+      "text": "h2 {font-size:17px}",
+      "family": "font-size",
+      "after": "var(--size-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 128,
+      "text": "h2 {font-weight:600}",
+      "family": "font-weight",
+      "after": "var(--weight-display-heavy)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 128,
+      "text": "h2 {margin:20px 0 6px}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 128,
+      "text": "h2 {margin:20px 0 6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 128,
+      "text": "h2 {margin:20px 0 6px}",
+      "family": "spacing",
+      "after": "var(--space-xxl)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 129,
+      "text": ".story {gap:0 10px}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 129,
+      "text": ".story {gap:0 10px}",
+      "family": "spacing",
+      "after": "var(--space-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 131,
+      "text": ".srow>* {border-bottom:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 131,
+      "text": ".srow>* {padding:9px 0}",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 131,
+      "text": ".srow>* {padding:9px 0}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 132,
+      "text": ".srow .when {font-size:12.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 133,
+      "text": ".srow .what {border-bottom:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 133,
+      "text": ".srow .what {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 134,
+      "text": ".srow .what i {border-radius:3px}",
+      "family": "radius",
+      "after": "var(--radius-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 134,
+      "text": ".srow .what i {margin-right:7px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 135,
+      "text": ".srow .what i.ring {border:1.5px solid var(--ink)}",
+      "family": "border-width",
+      "after": "var(--border-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 136,
+      "text": ".srow .what small {font-weight:400}",
+      "family": "font-weight",
+      "after": "var(--weight-body-regular)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 136,
+      "text": ".srow .what small {margin-left:6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 137,
+      "text": ".srow .len {font-size:13px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 138,
+      "text": ".srow .x {border-bottom:1px solid var(--line)}",
+      "family": "border-width",
+      "after": "var(--border-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 138,
+      "text": ".srow .x {font-size:18px}",
+      "family": "font-size",
+      "after": "var(--size-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 140,
+      "text": ".prev {font-size:13.5px}",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 140,
+      "text": ".prev {margin-bottom:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 141,
+      "text": ".prev .p1 {font-weight:500}",
+      "family": "font-weight",
+      "after": "var(--weight-body-medium)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 141,
+      "text": ".prev .p1 {margin-bottom:6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 142,
+      "text": ".prev .p1 i {border-radius:3px}",
+      "family": "radius",
+      "after": "var(--radius-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 142,
+      "text": ".prev .p1 i {margin-right:6px}",
+      "family": "spacing",
+      "after": "var(--space-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 143,
+      "text": ".composer form {gap:8px}",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 11,
+      "text": "line-height:1.4;",
+      "family": "line-height",
+      "after": "var(--line-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 11,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 21,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 21,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 25,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 25,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 28,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 28,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 29,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 29,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 30,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 30,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 34,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 34,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 43,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 43,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 47,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 47,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 50,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 50,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 54,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 54,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 55,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 55,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 58,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 58,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 59,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 59,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 62,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 62,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 63,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 63,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 68,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 68,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 69,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 69,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 72,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 72,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 74,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 74,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 75,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 75,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-m)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 82,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 83,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 83,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 85,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--display-letter-spacing-xxs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 88,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 88,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 93,
+      "text": "line-height:1.2;",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 93,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 95,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 95,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 101,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 101,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 106,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 106,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 107,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 107,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 110,
+      "text": "line-height:1.35;",
+      "family": "line-height",
+      "after": "var(--display-line-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 110,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--display-letter-spacing-xs)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 113,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 115,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 115,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 123,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 123,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 124,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 125,
+      "text": "line-height:1.35",
+      "family": "line-height",
+      "after": "var(--line-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 125,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 128,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 128,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 132,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 132,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 137,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 137,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 138,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 138,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-l)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 140,
+      "text": "line-height (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 140,
+      "text": "letter-spacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 2,
+      "text": "--paper: #F6F2EA",
+      "family": "token",
+      "after": "var(--neutral-1)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 2,
+      "text": "--card: #FBF8F2",
+      "family": "token",
+      "after": "var(--neutral-2)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 2,
+      "text": "--ink: #1E1B16",
+      "family": "token",
+      "after": "var(--neutral-10)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 2,
+      "text": "--muted: #6F675B",
+      "family": "token",
+      "after": "var(--neutral-7)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 2,
+      "text": "--faint: #9C9384",
+      "family": "token",
+      "after": "var(--neutral-6)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 3,
+      "text": "--line: #E4DCCD",
+      "family": "token",
+      "after": "var(--neutral-4)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 3,
+      "text": "--empty: #D6CDBC",
+      "family": "token",
+      "after": "var(--neutral-5)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 3,
+      "text": "--accent: #C8553D",
+      "family": "token",
+      "after": "var(--color-1)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 3,
+      "text": "--focus: #3D6FD9",
+      "family": "token",
+      "after": "var(--color-2)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 4,
+      "text": "--font: \"Instrument Sans\",system-ui,sans-serif",
+      "family": "token",
+      "after": "var(--font-body)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 4,
+      "text": "--display: \"Fraunces\",Georgia,serif",
+      "family": "token",
+      "after": "var(--font-display)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 7,
+      "text": "--paper: #14120F",
+      "family": "token",
+      "after": "var(--neutral-1)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 7,
+      "text": "--card: #1C1915",
+      "family": "token",
+      "after": "var(--neutral-2)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 7,
+      "text": "--ink: #EEE7DA",
+      "family": "token",
+      "after": "var(--neutral-10)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 7,
+      "text": "--muted: #A39A88",
+      "family": "token",
+      "after": "var(--neutral-7)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 7,
+      "text": "--faint: #776F61",
+      "family": "token",
+      "after": "var(--neutral-6)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 8,
+      "text": "--line: #2D2923",
+      "family": "token",
+      "after": "var(--neutral-4)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 8,
+      "text": "--empty: #3A342C",
+      "family": "token",
+      "after": "var(--neutral-5)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 8,
+      "text": "--accent: #EB7A5E",
+      "family": "token",
+      "after": "var(--color-1)"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 8,
+      "text": "--focus: #7FA2F0",
+      "family": "token",
+      "after": "var(--color-2)"
+    },
+    {
+      "path": "src/views/Paint.jsx",
+      "line": 239,
+      "text": "margin: 0",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/views/Paint.jsx",
+      "line": 249,
+      "text": "fontSize: 14",
+      "family": "font-size",
+      "after": "var(--size-m)"
+    },
+    {
+      "path": "src/views/Paint.jsx",
+      "line": 249,
+      "text": "lineHeight (added)",
+      "family": "line-height",
+      "after": "var(--line-m)"
+    },
+    {
+      "path": "src/views/Paint.jsx",
+      "line": 249,
+      "text": "letterSpacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-m)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 128,
+      "text": "marginTop: 8",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 140,
+      "text": "margin: 0",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 146,
+      "text": "marginTop: 8",
+      "family": "spacing",
+      "after": "var(--space-m)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 147,
+      "text": "fontSize: 14",
+      "family": "font-size",
+      "after": "var(--size-m)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 156,
+      "text": "margin: 0",
+      "family": "spacing",
+      "after": "var(--space-zero)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 168,
+      "text": "fontSize: 13",
+      "family": "font-size",
+      "after": "var(--size-s)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 188,
+      "text": "fontWeight: 400",
+      "family": "font-weight",
+      "after": "var(--weight-body-regular)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 147,
+      "text": "lineHeight (added)",
+      "family": "line-height",
+      "after": "var(--line-m)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 147,
+      "text": "letterSpacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-m)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 168,
+      "text": "lineHeight (added)",
+      "family": "line-height",
+      "after": "var(--line-s)"
+    },
+    {
+      "path": "src/views/Tracks.jsx",
+      "line": 168,
+      "text": "letterSpacing (added)",
+      "family": "letter-spacing",
+      "after": "var(--letter-spacing-s)"
+    }
+  ],
+  "skipped": [],
+  "kept": [
+    {
+      "key": "letter-spacing:0.06em",
+      "family": "letter-spacing",
+      "value": "0.06em",
+      "reason": "range"
+    },
+    {
+      "key": "shadow:0-6px 20px rgba(0,0,0,.08)",
+      "family": "shadow",
+      "value": "0-6px 20px rgba(0,0,0,.08)",
+      "reason": "unreadable"
+    },
+    {
+      "key": "shadow:inset 0 0 0 1px rgba(0,0,0,.08)",
+      "family": "shadow",
+      "value": "inset 0 0 0 1px rgba(0,0,0,.08)",
+      "reason": "inset"
+    },
+    {
+      "key": "color:--veil",
+      "family": "color",
+      "value": "rgba(246,242,234,.55)",
+      "variable": "--veil",
+      "reason": "unsafe"
+    }
+  ],
+  "overrides": [
+    {
+      "path": "src/styles.css",
+      "line": 82,
+      "text": "letter-spacing:.06em;",
+      "style": "Body XS",
+      "kind": "letter-spacing",
+      "reason": "kept"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 85,
+      "text": "line-height:1;",
+      "style": "Display XXS",
+      "kind": "line-height",
+      "reason": "edge"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 113,
+      "text": "line-height:1",
+      "style": "Body L",
+      "kind": "line-height",
+      "reason": "edge"
+    },
+    {
+      "path": "src/styles.css",
+      "line": 124,
+      "text": "line-height:1;",
+      "style": "Body L",
+      "kind": "line-height",
+      "reason": "edge"
+    }
+  ],
+  "choices": [],
+  "tidied": [],
+  "multiples": [
+    {
+      "label": "XXL × 1.75",
+      "value": "calc(var(--space-xxl) * 1.75)",
+      "px": 40.25,
+      "uses": 1,
+      "files": 1,
+      "examples": [
+        {
+          "text": "margin: calc(var(--space-xxl) * 1.75)",
+          "uses": 1
+        }
+      ]
+    },
+    {
+      "label": "XXL × 1.25",
+      "value": "calc(var(--space-xxl) * 1.25)",
+      "px": 28.75,
+      "uses": 1,
+      "files": 1,
+      "examples": [
+        {
+          "text": "margin: calc(var(--space-xxl) * 1.25)",
+          "uses": 1
+        }
+      ]
+    }
+  ],
+  "scales": [],
+  "warnings": [
+    "Install found no Prettier, so the files it rewrote keep its own formatting. Run the project’s formatter on them."
+  ],
+  "coverage": []
+}
